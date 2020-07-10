@@ -1,0 +1,15 @@
+Table {
+    margin-top: 1rem;
+}
+
+tbody th {
+    font-weight: 400;
+}
+
+p {
+    margin-top: 5rem;
+}
+
+.page-item.active .page-link{
+    color: white !important;
+}
