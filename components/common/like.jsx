@@ -6,12 +6,13 @@ class Like extends Component {
         if (this.props.liked) {
             likeClass = "fa fa-heart";
         }
+        // setup pointer cursor
+        likeClass += ' clickable';
         return(
             <i 
-                className={likeClass} 
+                className={likeClass}
                 aria-hidden="true" 
                 onClick={this.props.onClick}
-                style={{ cursor: "pointer" }}
             />
         );
     }

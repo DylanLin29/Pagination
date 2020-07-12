@@ -18,6 +18,7 @@ class Movies extends Component {
     }
 
     componentDidMount() {
+        // [{_id: '', name:'All Genres'},...getGenres()] clones everything in getGenres() and add {_id: '', name: 'All Genres'} at the begining
         this.setState({ movies: getMovies(), genres: [{_id: '', name:'All Genres'},...getGenres()] });
     }
 
@@ -45,18 +46,22 @@ class Movies extends Component {
         this.setState({ selectGenre: genre, currentPage: 1 });
     }
 
-    render() { 
+    getMovies = () => {
         const moviesSameGenre = this.state.movies
             .filter(movie => (
                 movie.genre.name === this.state.selectGenre || 
                 this.state.selectGenre === 'All Genres'
             ));
         const sortedMovies = _.orderBy(moviesSameGenre, [this.state.sortColumn.name], [this.state.sortColumn.order]);
-
         const movies = paginate(sortedMovies, this.state.currentPage, this.state.pageSize);
+        return {movies, moviesSameGenre};
+    }
+
+    render() { 
+        const { movies, moviesSameGenre} = this.getMovies();
         return (
             <div>
-                {moviesSameGenre.length === 0 ? 
+                {movies.length === 0 ? 
                     <p>There are no movies in the database</p> : 
                     <>
                         <div className="row">

@@ -3,7 +3,7 @@ import TableBody from './tableBody';
 
 const Table = ({ sortColumn, columns, movies, onSort }) => {
     return ( 
-        <table className="table" >
+        <table className="table">
         <TableHeader
             onSort={onSort}
             sortColumn={sortColumn}

@@ -14,6 +14,7 @@ const ListGroup = ({ items, selectItem, handleSelectItem, textProperty, valuePro
     );
 }
 
+// default props for ListGroup components
 ListGroup.defaultProps = {
     textProperty: "name",
     valueProperty: "_id"

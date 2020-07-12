@@ -6,7 +6,9 @@ import PropTypes from 'prop-types';
 const Pagination = ({ itemCount, pageSize, onPageChange, currentPage }) => {
 
     const pagesCount = itemCount / pageSize;
+    // create page array for pagination
     const pages = _.range(1, pagesCount+1);
+    // if page numbers > 1, display pagination. Otherwise, null.
     if (pages.length > 1) {
         return (
             <nav aria-label="Page navigation example">

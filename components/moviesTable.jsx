@@ -13,6 +13,7 @@ class MoviesTable extends Component {
         { name: 'dailyRentalRate', label: 'Rate' },
         { 
             key: 'Like', 
+            // object variables can also be html tag / function
             content: movie => <Like liked={movie.liked} onClick={() => this.props.onLikeClick(movie)}/> 
         },
         { 
