@@ -1,5 +1,6 @@
 Table {
     margin-top: 1rem;
+    margin-left: 0rem;
 }
 
 tbody th {
@@ -12,4 +13,8 @@ p {
 
 .page-item.active .page-link{
     color: white !important;
+}
+
+.list-group {
+    margin-top: 5.5rem;
 }

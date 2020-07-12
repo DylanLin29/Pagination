@@ -1,7 +1,9 @@
 import _ from 'lodash';
+// proptypes are used to validate the type of passed in props
+// More info https://reactjs.org/docs/typechecking-with-proptypes.html
+import PropTypes from 'prop-types'; 
 
 const Pagination = ({ itemCount, pageSize, onPageChange, currentPage }) => {
-    console.log(currentPage);
 
     const pagesCount = itemCount / pageSize;
     const pages = _.range(1, pagesCount+1);
@@ -27,5 +29,13 @@ const Pagination = ({ itemCount, pageSize, onPageChange, currentPage }) => {
     } 
     return null;
 }
+
+Pagination.propTypes = {
+    // indicates that itemsCount is number is required
+    itemCount: PropTypes.number.isRequired,
+    pageSize: PropTypes.number.isRequired, 
+    onPageChange: PropTypes.func.isRequired, 
+    currentPage: PropTypes.number.isRequired
+};
 
 export default Pagination;
